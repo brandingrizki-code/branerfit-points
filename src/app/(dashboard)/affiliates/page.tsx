@@ -9,7 +9,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CardTitle,
 } from '@/components/ui/card';
 import {
   Table,
@@ -28,7 +27,7 @@ import {
 } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { formatPoints, formatDate } from '@/lib/utils';
-import { Plus, UserPlus, Search } from 'lucide-react';
+import { UserPlus, Search } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface AffiliateData {
@@ -58,10 +57,6 @@ export default function AffiliatesPage() {
   const [saving, setSaving] = useState(false);
 
   const supabase = createClient();
-
-  useEffect(() => {
-    loadAffiliates();
-  }, []);
 
   async function loadAffiliates() {
     const { data: affiliatesData } = await supabase
@@ -121,6 +116,13 @@ export default function AffiliatesPage() {
     setAffiliates(withPoints);
     setLoading(false);
   }
+
+  useEffect(() => {
+    async function init() {
+      await loadAffiliates();
+    }
+    init();
+  });
 
   async function handleAddAffiliate(e: React.FormEvent) {
     e.preventDefault();

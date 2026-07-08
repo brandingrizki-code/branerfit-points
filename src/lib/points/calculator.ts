@@ -50,8 +50,8 @@ export function calculateSalesPoints(checkoutCount: number): number {
 }
 
 export function calculatePoints(
-  totalPoints: number,
-  newPoints: number
+  _totalPoints: number,
+  _newPoints: number
 ): { newTier: string | null; previousTier: string | null } {
   return { newTier: null, previousTier: null };
 }

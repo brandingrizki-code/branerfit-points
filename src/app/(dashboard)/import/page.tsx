@@ -8,7 +8,6 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { calculateSalesPoints, getActivityPoints } from '@/lib/points/calculator';
-import { formatPoints } from '@/lib/utils';
 import { toast } from 'sonner';
 import { Upload, Download, FileSpreadsheet } from 'lucide-react';
 
@@ -316,7 +315,7 @@ export default function ImportPage() {
             {importType === 'affiliates' && (
               <div className="text-xs text-muted-foreground space-y-1">
                 <p><strong>Kolom:</strong> full_name, email, name, tiktok_username, phone</p>
-                <p><strong>Catatan:</strong> Akun akan dibuat dengan password default "branerfit123"</p>
+                <p><strong>Catatan:</strong> Akun akan dibuat dengan password default &quot;branerfit123&quot;</p>
               </div>
             )}
           </div>

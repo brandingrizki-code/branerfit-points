@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { formatPoints } from '@/lib/utils';
-import { getTier, TIER_ORDER } from '@/lib/points/tiers';
+import { getTier } from '@/lib/points/tiers';
 import {
   Trophy,
   Video,
